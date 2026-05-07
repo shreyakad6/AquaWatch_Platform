@@ -1,0 +1,9 @@
+flask
+flask-cors
+pandas
+geopandas
+osmnx
+earthengine-api
+geemap
+scikit-learn
+joblib

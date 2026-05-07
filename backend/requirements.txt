@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+python-multipart
+pandas
+# AI/ML & Data
+scikit-learn
+#opencv-python
+rasterio
+#tensorflow
+#xgboost
+geopandas
+osmnx
+earthengine-api
+joblib
+matplotlib
