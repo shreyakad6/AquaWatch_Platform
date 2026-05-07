@@ -27,8 +27,8 @@ app.mount("/api/outputs", StaticFiles(directory=OUTPUT_DIR), name="outputs")
 # --- Water Monitoring Module (additive, no existing changes) ---
 app.include_router(water_monitoring_router)
 
-_BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CSV_PATH = os.path.join(_BASE_DIR, "maharashtra_clean_dataset.csv")
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CSV_PATH = os.path.join(BASE_DIR, "maharashtra_clean_dataset.csv")
 
 def load_data():
     if not os.path.exists(CSV_PATH):
@@ -253,17 +253,20 @@ class ProcessRiverRequest(BaseModel):
 def process_river(req: ProcessRiverRequest):
     river_name = req.river
     year = req.year
+
     res = run_pipeline(river_name, year)
+
     if "error" in res:
         return {
             "status": "error",
             "message": res["error"]
         }
-        
+
     image_rel_path = f"{river_name}/{year}.png"
+
     return {
         "status": "success",
-        "image_url": f"http://localhost:8000/api/outputs/{image_rel_path}",
+        "image_url": f"/api/outputs/{image_rel_path}",
         "stats": res["stats"],
         "mocked": False
     }

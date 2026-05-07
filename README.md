@@ -31,7 +31,7 @@ venv\Scripts\activate
 pip install -r requirements.txt
 python main.py
 ```
-*The API will be available at `http://localhost:8000`*
+*The API will be available at import.meta.env.VITE_API_URL*
 
 ### 2. Setup Frontend
 In a new terminal, navigate to the `frontend` directory and install the packages:

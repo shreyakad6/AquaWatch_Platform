@@ -16,7 +16,7 @@ import { motion } from 'framer-motion';
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import WaterMonitoringView from './WaterMonitoring';
 
-const BACKEND_URL = 'http://localhost:8000';
+const BACKEND_URL = import.meta.env.VITE_API_URL;
 
 export default function AppLayout() {
   const navigate = useNavigate();

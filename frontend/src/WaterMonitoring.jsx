@@ -30,7 +30,7 @@ import {
 import 'leaflet/dist/leaflet.css';
 import axios from 'axios';
 
-const BACKEND = 'http://localhost:8000';
+const BACKEND = import.meta.env.VITE_API_URL;
 const YEARS   = [2020, 2021, 2022, 2023, 2024, 2025];
 
 // ─── Colour helpers ────────────────────────────────────────────────────────────

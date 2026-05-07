@@ -25,7 +25,7 @@ FRONTEND_PID=$!
 echo "=============================================="
 echo "✅ Deployment initiated!"
 echo "Frontend running at: http://localhost:5173"
-echo "Backend API running at: http://localhost:8000"
+echo "Backend API running at: import.meta.env.VITE_API_URL"
 echo "Press Ctrl+C to stop both servers."
 echo "=============================================="
 
