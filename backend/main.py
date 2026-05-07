@@ -27,7 +27,8 @@ app.mount("/api/outputs", StaticFiles(directory=OUTPUT_DIR), name="outputs")
 # --- Water Monitoring Module (additive, no existing changes) ---
 app.include_router(water_monitoring_router)
 
-CSV_PATH = r"c:\Users\Admin\Desktop\Awb\AquaWatch_Platform\maharashtra_clean_dataset.csv"
+_BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CSV_PATH = os.path.join(_BASE_DIR, "maharashtra_clean_dataset.csv")
 
 def load_data():
     if not os.path.exists(CSV_PATH):
